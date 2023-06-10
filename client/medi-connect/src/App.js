@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import ChatPage from './pages/ChatPage/ChatPage';
 
@@ -6,8 +6,10 @@ import ChatPage from './pages/ChatPage/ChatPage';
 function App() {
   return (
     <div className="App">
-      <Route path='/' component={HomePage} exacts> HomePage </Route>
-      <Route path='/chats' component={ChatPage} exacts> ChatPage </Route>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/about" element={<ChatPage/>}/>
+      </Routes>
     </div>
   );
 }
