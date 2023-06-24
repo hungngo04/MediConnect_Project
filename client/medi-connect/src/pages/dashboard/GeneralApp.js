@@ -1,10 +1,15 @@
-import React from "react";
+import React, {Suspense, lazy} from "react";
+
+// Dynamic loading
+const Cat = lazy(() => import("../../components/Cat.js"));
 
 const GeneralApp = () => {
 
   return (
     <>
-      App
+      <Suspense fallback="Loading..">
+        <Cat/>
+      </Suspense>
     </>
   );
 };
